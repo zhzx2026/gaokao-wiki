@@ -24,6 +24,26 @@ jobs:
       - name: Install dependencies
         run: pip install mkdocs mkdocs-material
 
+      - name: Link textbooks
+        run: |
+          mkdir -p docs/textbooks/{数学,语文,英语,物理,化学,生物,政治,历史,地理,技术}
+          for f in 课本下载/*.pdf; do
+            name=$(basename "$f")
+            case "$name" in
+              *数学*) cp "$f" docs/textbooks/数学/ ;;
+              *语文*) cp "$f" docs/textbooks/语文/ ;;
+              *英语*) cp "$f" docs/textbooks/英语/ ;;
+              *物理*) cp "$f" docs/textbooks/物理/ ;;
+              *化学*) cp "$f" docs/textbooks/化学/ ;;
+              *生物学*) cp "$f" docs/textbooks/生物/ ;;
+              *思想政治*) cp "$f" docs/textbooks/政治/ ;;
+              *历史*) cp "$f" docs/textbooks/历史/ ;;
+              *地理*) cp "$f" docs/textbooks/地理/ ;;
+              *信息技术*) cp "$f" docs/textbooks/技术/ ;;
+            esac
+          done
+          echo "Copied $(find docs/textbooks -name '*.pdf' | wc -l) PDFs"
+
       - name: Build site
         run: python -m mkdocs build
 
