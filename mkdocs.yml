@@ -1,0 +1,99 @@
+site_name: 浙江高考 Wikipedia
+site_description: 中国高考知识百科，涵盖全部学科的知识体系
+site_author: 浙江高考 Wikipedia 贡献者
+site_url: https://gaokao.wiki
+repo_name: gaokao-wiki/gaokao-wiki
+repo_url: https://github.com/gaokao-wiki/gaokao-wiki
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/gaokao-wiki/gaokao-wiki
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - 首页: index.md
+  - 数学:
+      - 概述: math/index.md
+      - 强基数学:
+          - 第1章 函数: advanced-math/chapter1/index.md
+          - 1.0 函数练习: advanced-math/chapter1/1.0-函数练习.md
+          - 1.1 二次函数: advanced-math/chapter1/1.1-二次函数.md
+          - 1.2 函数的性质: advanced-math/chapter1/1.2-函数的性质.md
+          - 1.3 函数基础练习 1: advanced-math/chapter1/1.3-函数基础练习1.md
+          - 1.4 指数函数: advanced-math/chapter1/1.4-指数函数.md
+          - 1.5 对数函数: advanced-math/chapter1/1.5-对数函数.md
+          - 1.6 函数综合练习 1: advanced-math/chapter1/1.6-函数综合练习1.md
+  - 语文: chinese/index.md
+  - 英语: english/index.md
+  - 物理: physics/index.md
+  - 化学: chemistry/index.md
+  - 生物: biology/index.md
+  - 政治: politics/index.md
+  - 历史: history/index.md
+  - 地理: geography/index.md
+  - 技术: technology/index.md
+  - 其他:
+      - 浙江高考规则: zhejiang/index.md
+      - 课本清单: zhejiang/textbooks.md
+      - 关于: about.md
