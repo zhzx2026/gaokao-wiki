@@ -2,56 +2,15 @@ name: Export to PDF
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
 
 jobs:
   export:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-latex-extra texlive-fonts-recommended texlive-lang-chinese pandoc
-
-      - name: Build merged Markdown
-        run: |
-          mkdir -p export
-          # Merge 强基数学 第1章 into one file
-          cat docs/advanced-math/chapter1/1.0-函数练习.md > export/强基数学-第1章-函数.md
-          echo -e "\n\n\\newpage\n\n" >> export/强基数学-第1章-函数.md
-          cat docs/advanced-math/chapter1/1.1-二次函数.md >> export/强基数学-第1章-函数.md
-          echo -e "\n\n\\newpage\n\n" >> export/强基数学-第1章-函数.md
-          cat docs/advanced-math/chapter1/1.2-函数的性质.md >> export/强基数学-第1章-函数.md
-          echo -e "\n\n\\newpage\n\n" >> export/强基数学-第1章-函数.md
-          cat docs/advanced-math/chapter1/1.3-函数基础练习1.md >> export/强基数学-第1章-函数.md
-          echo -e "\n\n\\newpage\n\n" >> export/强基数学-第1章-函数.md
-          cat docs/advanced-math/chapter1/1.4-指数函数.md >> export/强基数学-第1章-函数.md
-          echo -e "\n\n\\newpage\n\n" >> export/强基数学-第1章-函数.md
-          cat docs/advanced-math/chapter1/1.5-对数函数.md >> export/强基数学-第1章-函数.md
-          echo -e "\n\n\\newpage\n\n" >> export/强基数学-第1章-函数.md
-          cat docs/advanced-math/chapter1/1.6-函数综合练习1.md >> export/强基数学-第1章-函数.md
-
-      - name: Convert to PDF
-        run: |
-          pandoc export/强基数学-第1章-函数.md \
-            --pdf-engine=xelatex \
-            -V mainfont="Noto Serif CJK SC" \
-            -V monofont="Noto Sans Mono CJK SC" \
-            -V geometry:margin=2cm \
-            --toc \
-            --toc-depth=2 \
-            -o export/强基数学-第1章-函数.pdf
-
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq pandoc texlive-xetex texlive-latex-extra texlive-lang-chinese fonts-noto-cjk
+      - run: bash export/build.sh
+      - uses: actions/upload-artifact@v4
         with:
           name: 强基数学-第1章-函数
-          path: export/强基数学-第1章-函数.pdf
+          path: export/gaokao-wiki.pdf
