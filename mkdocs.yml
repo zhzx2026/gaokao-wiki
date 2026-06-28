@@ -1,9 +1,9 @@
 site_name: 浙江高考 Wikipedia
 site_description: 中国高考知识百科，涵盖全部学科的知识体系
 site_author: 浙江高考 Wikipedia 贡献者
-site_url: https://gaokao.wiki
-repo_name: gaokao-wiki/gaokao-wiki
-repo_url: https://github.com/gaokao-wiki/gaokao-wiki
+site_url: https://zhzx2026.github.io/gaokao-wiki
+repo_name: zhzx2026/gaokao-wiki
+repo_url: https://github.com/zhzx2026/gaokao-wiki
 edit_uri: edit/main/docs/
 
 theme:
@@ -36,7 +36,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/gaokao-wiki/gaokao-wiki
+      link: https://github.com/zhzx2026/gaokao-wiki
 
 markdown_extensions:
   - admonition
