@@ -17,7 +17,24 @@ header-includes: |
   \usepackage{amsmath,amssymb,amsthm}
   \usepackage{hyperref,xcolor}
   \hypersetup{colorlinks=true,linkcolor=blue}
-  \usepackage{framed}
+  \usepackage{mdframed}
+  \definecolor{info-blue}{RGB}{68,138,255}
+  \definecolor{warning-orange}{RGB}{255,145,0}
+  \definecolor{Red}{rgb}{1,0,0}
+  \newenvironment{details}[2]{%
+    \begin{mdframed}[%
+      roundcorner=3pt,
+      linewidth=1pt,
+      linecolor=#1,
+      backgroundcolor=white,
+      frametitle={#2},
+      frametitlefont={\sffamily},
+      frametitlerule=false,
+      frametitlebackgroundcolor=#1!30!white,
+    ]%
+  }{%
+    \end{mdframed}\vskip.5em
+  }
 ---
 '
 
