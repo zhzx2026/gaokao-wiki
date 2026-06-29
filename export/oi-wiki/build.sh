@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd "$(dirname "$0")/oi-wiki"
+cd "$(dirname "$0")"
 
 SCRIPT_DIR="$(pwd)"
 
