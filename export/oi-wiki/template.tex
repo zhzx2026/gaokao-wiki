@@ -1,0 +1,160 @@
+\documentclass[10pt,a4paper,openany]{book}
+\usepackage{xeCJK}
+\usepackage{tocloft}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{unicode-math}
+\usepackage[left=0.8in,right=0.8in,top=0.8in,bottom=0.8in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{footnotebackref}
+\usepackage{xpatch}
+\usepackage{titlesec}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{caption}
+
+% Redefine section levels to avoid conflicts with details environment
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus .2ex}%
+                                   {\normalfont\huge\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{2}{\z@}%
+                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                   {1.5ex \@plus .2ex}%
+                                   {\normalfont\LARGE\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{3}{\z@}%
+                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                   {1.5ex \@plus .2ex}%
+                                   {\Large\sffamily}}
+\renewcommand\paragraph{\@startsection {paragraph}{4}{\z@}%
+                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                   {.75ex}%
+                                   {\large\sffamily}}
+\renewcommand\subparagraph{\@startsection {subparagraph}{5}{\z@}%
+                                   {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                   {.1ex}%
+                                   {\sffamily}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks,urlcolor=.,breaklinks=true,hyperfootnotes=true,unicode}
+
+\ExplSyntaxOn
+\IfPackageAtLeastTF{xeCJK}{2022-08-05}{
+  \IfPackageAtLeastTF{xeCJK}{2022-08-31}{}{
+    \xpatchcmd \__xeCJK_check_for_xglue:
+      {\__xeCJK_if_last_glue:TF}
+      {\__xeCJK_if_last_glue:T}
+      {}{\PatchFailed}
+  }
+}{}
+\ExplSyntaxOff
+
+\xeCJKsetcharclass{"2190}{"2192}{1}
+\xeCJKsetup{xCJKecglue}
+
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\title{浙江高考 Wikipedia · 强基数学}
+\author{浙江高考 Wikipedia 贡献者}
+\date{\today}
+
+\setmonofont[Scale=0.9]{Roboto Mono}
+\setmathfont{CMU Serif}
+\setmathrm{CMU Serif}
+\setmathsf{CMU Sans Serif}
+
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\small\nouppercase\leftmark\rm}
+\fancyhead[LO]{\small\it\nouppercase\rightmark\rm}
+
+\setlength{\headheight}{12.5pt}
+
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\contentsname}{目录}
+\allowdisplaybreaks[4]
+
+\definecolor{warning-orange}{RGB}{255, 145, 0}
+\definecolor{info-blue}{RGB}{68, 138, 255}
+\definecolor{Red}{rgb}{1,0,0}
+\definecolor{Blue}{rgb}{0,0,1}
+
+\newenvironment{details}[2]{%
+    \vskip.7em 
+    \ifdefined\@inDetail%
+        \paragraph*{#2}\begingroup
+    \else
+        \begin{mdframed}[%
+            roundcorner=3pt,
+            linewidth=1pt,
+            linecolor=#1,
+            backgroundcolor=white,
+            frametitle={#2},
+            frametitlefont={\sffamily},
+            frametitlerule=false,
+            frametitlebackgroundcolor=#1!50!white,
+        ]%
+        \begingroup\def\@inDetail{}
+    \fi
+}{%
+    \endgroup
+    \ifdefined\@inDetail\else
+        \end{mdframed}\vskip.5em
+    \fi
+}
+
+\newenvironment{tabbed}[1]{%
+  \begin{itemize}
+    \item #1 \par
+    \vspace{0.5em}
+}{%
+  \end{itemize}
+}
+
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space}
+
+\renewcommand{\baselinestretch}{1.2}\normalsize
+\setlength{\parskip}{.2\baselineskip}
+\renewcommand{\headrulewidth}{0mm}
+\setlength{\parindent}{2em}
+\setlength{\tabcolsep}{2pt}
+
+\let\@afterindentfalse\@afterindenttrue
+\newlength{\parindent@restore}
+\parindent@restore\parindent
+\patchcmd\mdf@trivlist{\itemindent\z@}{\itemindent\parindent@restore}{}{}
+\patchcmd\mdfframedtitleenv{%
+    \mdf@lrbox{\mdf@frametitlebox}%
+}{%
+    \mdf@lrbox{\mdf@frametitlebox}\parindent\z@%
+}{}{}
+
+\makeatother
+\begin{document}
+    \maketitle
+    \frontmatter
+    \tableofcontents
+    \clearpage
+    \mainmatter
+    \input{includes}
+\end{document}

@@ -1,0 +1,23 @@
+{
+  "name": "gaokao-wiki-export",
+  "version": "0.1.0",
+  "description": "Export Gaokao Wiki advanced math to PDF using remark-latex pipeline",
+  "main": "build.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "escape-latex": "^1.2.0",
+    "js-yaml": "^4.1.0",
+    "remark-details": "^4.1.1",
+    "remark-footnotes": "^4.0.1",
+    "remark-gfm": "^3.0.1",
+    "remark-latex": "^0.13.0",
+    "remark-math": "^5.1.1",
+    "remark-parse": "^10.0.1",
+    "remark-tabbed": "^0.1.0",
+    "to-vfile": "^8.0.0",
+    "unified": "^10.1.2"
+  }
+}
