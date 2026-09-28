@@ -1,20 +1,17 @@
 # 浙江高考 Wikipedia
 
-面向**浙江省**新高考的知识百科。
+面向**浙江省**新高考的开源知识百科。
 
 ## 📚 学科
 
 | 学科 | 卷种 | 分值 |
 |------|------|------|
 | [数学](math/index.md) | 新高考 I 卷 | 150 |
-| [语文](chinese/index.md) | 新高考 I 卷 | 150 |
-| [英语](english/index.md) | 新高考 I 卷 | 150 |
-| [物理](physics/index.md) | 浙江命题 | 100（赋分） |
-| [化学](chemistry/index.md) | 浙江命题 | 100（赋分） |
-| [生物](biology/index.md) | 浙江命题 | 100（赋分） |
-| [政治](politics/index.md) | 浙江命题 | 100（赋分） |
-| [历史](history/index.md) | 浙江命题 | 100（赋分） |
-| [地理](geography/index.md) | 浙江命题 | 100（赋分） |
-| [技术](technology/index.md) | 浙江命题 | 100（赋分） |
 
-📖 [浙江高考规则](zhejiang/index.md) · [课本清单](zhejiang/textbooks.md) · [关于](about.md)
+当前收录**高中数学课内知识点全集**（人教 A 版新教材必修 + 选择性必修）：
+
+- 每节标注 **难度** 与 **重要性** 双维度星级（最高 ★★★★★）；
+- 每个知识点附难度星级；
+- 配有函数图象、平面几何、立体几何等精确 SVG 插图。
+
+📖 [数学总览](math/index.md)
