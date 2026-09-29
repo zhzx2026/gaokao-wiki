@@ -80,93 +80,25 @@ nav:
   - 首页: index.md
   - 数学:
       - 总览: math/index.md
-      - 基础:
-          - 代数基础:
-              - 简介: math/algebra/index.md
-              - 集合: math/algebra/set.md
-              - 常用逻辑用语: math/algebra/logic.md
-              - 不等式: math/algebra/inequality.md
-              - 复数: math/algebra/complex-number.md
-          - 数列:
-              - 简介: math/sequence/index.md
-              - 等差数列: math/sequence/arithmetic.md
-              - 等比数列: math/sequence/geometric.md
-              - 递推数列: math/sequence/recurrence.md
-              - 数列求和: math/sequence/summation.md
-      - 函数:
-          - 函数基础:
-              - 简介: math/function/index.md
-              - 函数概念与性质: math/function/concept.md
-              - 幂函数: math/function/power.md
-              - 指数函数: math/function/exponential.md
-              - 对数函数: math/function/logarithmic.md
-              - 函数零点: math/function/zero-point.md
-          - 导数:
-              - 简介: math/function/derivative/index.md
-              - 概念: math/function/derivative/concept.md
-              - 单调性: math/function/derivative/monotonicity.md
-              - 极值与最值: math/function/derivative/extremum.md
-              - 应用: math/function/derivative/application.md
-      - 几何:
-          - 三角函数:
-              - 简介: math/trigonometry/index.md
-              - 角与弧度制: math/trigonometry/angle-radian.md
-              - 定义与性质: math/trigonometry/definition.md
-              - 恒等变换: math/trigonometry/identity.md
-              - 解三角形: math/trigonometry/triangle.md
-          - 平面向量:
-              - 简介: math/vector/index.md
-              - 概念与线性运算: math/vector/concept.md
-              - 基本定理: math/vector/basis.md
-              - 数量积: math/vector/dot-product.md
-              - 应用: math/vector/application.md
-          - 立体几何:
-              - 简介: math/solid-geometry/index.md
-              - 空间几何体: math/solid-geometry/geometric-body.md
-              - 点线面位置关系: math/solid-geometry/position-relation.md
-              - 空间向量: math/solid-geometry/space-vector.md
-              - 空间角与距离: math/solid-geometry/angle-distance.md
-          - 解析几何:
-              - 简介: math/analytic-geometry/index.md
-              - 直线: math/analytic-geometry/line.md
-              - 圆: math/analytic-geometry/circle.md
-              - 圆锥曲线:
-                  - 椭圆: math/analytic-geometry/ellipse.md
-                  - 双曲线: math/analytic-geometry/hyperbola.md
-                  - 抛物线: math/analytic-geometry/parabola.md
-                  - 综合简介: math/analytic-geometry/conic-section/index.md
-                  - 统一定义: math/analytic-geometry/conic-section/unified-definition.md
-                  - 焦点弦性质: math/analytic-geometry/conic-section/focal-property.md
-                  - 弦长与中点弦: math/analytic-geometry/conic-section/chord-problem.md
-      - 概率统计:
-          - 统计:
-              - 简介: math/probability-statistics/index.md
-              - 统计抽样: math/probability-statistics/sampling.md
-              - 成对数据统计分析: math/probability-statistics/regression.md
-          - 计数原理:
-              - 简介: math/probability-statistics/counting/index.md
-              - 排列: math/probability-statistics/counting/permutation.md
-              - 组合: math/probability-statistics/counting/combination.md
-              - 二项式定理: math/probability-statistics/counting/binomial-theorem.md
-          - 概率:
-              - 古典概型: math/probability-statistics/classical-probability.md
-              - 条件概率: math/probability-statistics/conditional-probability.md
-          - 随机变量:
-              - 简介: math/probability-statistics/random-variable/index.md
-              - 离散型随机变量: math/probability-statistics/random-variable/discrete.md
-              - 二项分布与正态分布: math/probability-statistics/random-variable/binomial-normal.md
-      - 强基数学:
-          - 函数: advanced-math/chapter1/index.md
-  - 语文: chinese/index.md
-  - 英语: english/index.md
-  - 物理: physics/index.md
-  - 化学: chemistry/index.md
-  - 生物: biology/index.md
-  - 政治: politics/index.md
-  - 历史: history/index.md
-  - 地理: geography/index.md
-  - 技术: technology/index.md
-  - 其他:
-      - 浙江高考规则: zhejiang/index.md
-      - 课本清单: zhejiang/textbooks.md
-      - 关于: about.md
+      - 必修第一册:
+          - 集合与常用逻辑用语: math/set-logic.md
+          - 等式与不等式: math/inequality.md
+          - 函数的概念与性质: math/function.md
+          - 幂指对函数: math/power-exp-log.md
+          - 三角函数与恒等变换: math/trigonometry.md
+      - 必修第二册:
+          - 解三角形: math/triangle.md
+          - 平面向量: math/vectors.md
+          - 立体几何初步: math/solid-geometry.md
+          - 复数: math/complex.md
+      - 选择性必修第一册:
+          - 空间向量与立体几何: math/space-vector.md
+          - 直线与圆: math/line-circle.md
+          - 圆锥曲线: math/conics.md
+      - 选择性必修第二册:
+          - 数列: math/sequences.md
+          - 导数及其应用: math/derivative.md
+      - 选择性必修第三册:
+          - 计数原理与二项式定理: math/counting.md
+          - 概率与随机变量: math/probability.md
+          - 统计与成对数据: math/statistics.md
